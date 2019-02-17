@@ -5,23 +5,29 @@
 .close {
   position: relative;
   z-index: 1;
+
   display: inline-block;
   width: 30px;
   padding: 0;
-  border: none;
+
   line-height: 30px;
+
+  border: none;
   background: transparent;
   user-select: none;
   cursor: pointer;
 
   span {
     position: relative;
+
     display: inline-block;
     width: 100%;
     height: $toggler-part-height;
     vertical-align: middle;
+
     font-size: 0;
     color: transparent;
+
     background: transparent;
 
     &:before,
@@ -30,8 +36,10 @@
       position: absolute;
       top: 0;
       left: 0;
+
       width: 100%;
       height: $toggler-part-height;
+
       background: $toggler-part-bg-color;
       transform-origin: 50% 50%;
     }

@@ -8,6 +8,7 @@
     min-width: 0;
     padding: 0;
     margin: 0;
+
     border: 0;
 
     &:not(:last-child) {
@@ -19,13 +20,14 @@
     display: block;
     width: 100%;
     max-width: 100%; // Привет IE
+
+    font-family: $font-family;
+    font-size: $font-size-h3;
+    line-height: $line-height;
+    color: currentColor;
     margin-top: 0;
     margin-bottom: $typo-margin-vertical;
-    font-size: $font-size-h3;
-    font-family: $font-family;
     font-weight: 700;
-    line-height: $line-height;
     white-space: normal; // Привет IE
-    color: currentColor;
   }
 }

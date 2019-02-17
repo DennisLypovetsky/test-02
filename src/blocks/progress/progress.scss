@@ -5,15 +5,17 @@
 .progress {
   margin-top: $typo-margin-vertical;
   margin-bottom: $typo-margin-vertical;
+
   border: 1px solid $border-color;
   border-radius: $border-radius;
   text-align: center;
 
   &__bar {
-    background-color: $gray-lightest;
-    border-radius: $border-radius;
     max-width: 100%;
     min-height: 1px;
+
+    border-radius: $border-radius;
+    background-color: $gray-lightest;
     white-space: nowrap;
     transition: width $transition-time;
   }

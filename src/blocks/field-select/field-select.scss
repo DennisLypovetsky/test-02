@@ -70,6 +70,7 @@
     .choices__inner,
     .choices:after {
       border-color: $color-danger;
+
       background-color: lighten($color-danger, 35%);
     }
   }
@@ -100,8 +101,10 @@
     position: absolute;
     top: 7px;
     right: 16px;
+
     width: 14px;
     height: 14px;
+
     border-left: 1px solid $border-color;
     border-bottom: 1px solid $border-color;
     pointer-events: none;
@@ -119,15 +122,18 @@
 
   &__inner {
     padding: $field-padding-vertical 40px $field-padding-vertical $field-padding-horizontal;
+
+    font-size: 1em;
+    line-height: 1.5;
+
     border: 1px solid $border-color;
     border-radius: $border-radius;
     background: #fff;
-    font-size: 1em;
-    line-height: 1.5;
     cursor: pointer;
 
     #{$block-name}__item--selectable {
       max-width: 100%;
+
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
@@ -138,14 +144,16 @@
     position: absolute;
     z-index: 1;
     top: 100%;
+
     display: none;
     width: 100%;
+
     border: 1px solid $border-color;
+    background-color: #fff;
     overflow: hidden;
     margin-top: -1px;
     border-bottom-left-radius: $border-radius;
     border-bottom-right-radius: $border-radius;
-    background-color: #fff;
     word-break: break-all;
 
     #{$block-name}__item {
@@ -160,6 +168,7 @@
 
   &__heading {
     padding: $field-padding-vertical $field-padding-horizontal;
+
     font-size: $font-size-sm;
     font-weight: 700;
     opacity: 0.5;

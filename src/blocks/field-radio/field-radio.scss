@@ -30,10 +30,12 @@
 
   &__name {
     position: relative;
+
     display: inline-block;
     margin-right: 0.6em;
     padding-left: 1.5em;
     font-weight: 400;
+
     line-height: $line-height;
   }
 
@@ -69,8 +71,10 @@
       position: absolute;
       top: 5px;
       left: 0;
+
       width: 14px;
       height: 14px;
+
       border: 2px solid currentColor;
       border-radius: 50%;
     }
@@ -81,6 +85,7 @@
 
     @at-root input:disabled ~ &:before {
       border-color: $gray-light;
+
       background: $gray-lighter;
     }
 
@@ -89,9 +94,11 @@
       position: absolute;
       top: 9px;
       left: 4px;
+
       width: 6px;
       height: 6px;
       opacity: 0;
+
       border-radius: 50%;
       background-color: currentColor;
       transition: opacity $transition-time;
@@ -112,6 +119,7 @@
     position: absolute;
     top: 0.8em;
     left: 0;
+
     padding: 0;
     margin: 0;
     transform: translateY(-50%);

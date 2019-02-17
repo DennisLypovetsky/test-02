@@ -19,9 +19,11 @@
 
     &:after {
       content: '';
+
       display: none;
       flex-grow: 1;
       height: 1px;
+
       background-color: $border-color;
 
       @media (min-width: $screen-md) {
@@ -36,9 +38,12 @@
 
   &__link-wrap {
     position: relative;
+
     margin: 0 0.3em 0.3em 0;
-    border: 1px solid $border-color;
+
     color: $text-color-muted;
+
+    border: 1px solid $border-color;
 
     @media (min-width: $screen-md) {
       margin: 0;
@@ -64,8 +69,10 @@
   &__link {
     display: block;
     padding: $field-padding-vertical $field-padding-horizontal;
+
     color: currentColor;
     text-decoration: none;
+
     background-color: $gray-lightest;
 
     &:hover,
@@ -77,6 +84,7 @@
   &__content-wrapper {
     display: block;
     padding: $field-padding-vertical $field-padding-horizontal;
+
     border: 1px solid $border-color;
 
     @media (min-width: $screen-md) {

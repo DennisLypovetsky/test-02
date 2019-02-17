@@ -7,23 +7,27 @@
   margin-top: $typo-margin-vertical;
   margin-bottom: $typo-margin-vertical;
   border-collapse: collapse;
+
   border: 1px solid $border-color;
 
   caption {
     padding: 0.4em $field-padding-horizontal;
-    border: 1px solid $border-color;
-    caption-side: top;
-    text-align: left;
-    border-bottom: 0;
+
     font-size: $font-size-sm;
     line-height: 1em;
     color: $text-color-muted;
+
+    border: 1px solid $border-color;
+    border-bottom: 0;
+    caption-side: top;
+    text-align: left;
   }
 
   td,
   th {
-    padding: $field-padding-vertical $field-padding-horizontal;
     vertical-align: top;
+    padding: $field-padding-vertical $field-padding-horizontal;
+
     border-bottom: 1px solid $border-color;
 
     &:not(:first-child) {
@@ -37,6 +41,7 @@
 
   @media (max-width: ($screen-md - 1)) {
     display: block;
+
     border: 0;
 
     thead {
@@ -49,6 +54,7 @@
 
       tr {
         display: block;
+
         border: 1px solid $border-color;
         border-bottom: 0;
 
@@ -60,11 +66,13 @@
       td {
         display: block;
         width: 100%;
-        border-right: 0 !important; // stylelint-disable-line  declaration-no-important
+
         border-left: 0 !important; // stylelint-disable-line  declaration-no-important
+        border-right: 0 !important; // stylelint-disable-line  declaration-no-important
 
         &:before { // stylelint-disable-line  max-nesting-depth
           content: attr(data-label);
+
           display: block;
           font-weight: 700;
         }

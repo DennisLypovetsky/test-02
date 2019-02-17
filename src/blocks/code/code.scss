@@ -7,6 +7,7 @@
   width: 100%;
   max-height: 500px;
   padding: 0.5em 1em;
+
   border: 1px solid $gray-lighter;
   margin-top: $typo-margin-vertical;
   margin-bottom: $typo-margin-vertical;
@@ -21,6 +22,7 @@
     min-height: 1em;
     padding: 0;
     white-space: pre;
+
     background-color: transparent;
 
     p,

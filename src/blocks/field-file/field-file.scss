@@ -15,11 +15,13 @@
 
   &__input-wrap {
     position: relative;
+
     display: block;
   }
 
   &__input {
     position: absolute;
+
     width: 0;
     height: 0;
     opacity: 0;
@@ -32,13 +34,15 @@
 
   &__name-text {
     position: relative;
+
     display: flex;
     align-items: baseline;
     width: 100%;
+
     border: 1px solid $border-color;
-    overflow: hidden;
     border-radius: $border-radius;
     background-color: #fff;
+    overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     cursor: pointer;
@@ -50,12 +54,15 @@
 
     &:before {
       content: attr(data-button-text);
+
       display: block;
       padding: $field-padding-vertical  $field-padding-horizontal;
-      background-color: $gray-lightest;
-      border-right: 1px solid $border-color;
-      margin-right: $field-padding-horizontal;
+
       line-height: $line-height;
+
+      border-right: 1px solid $border-color;
+      background-color: $gray-lightest;
+      margin-right: $field-padding-horizontal;
       border-top-left-radius: $border-radius;
       border-bottom-left-radius: $border-radius;
     }
@@ -86,6 +93,7 @@
 
     #{$block-name}__name-text {
       border-color: $color-danger;
+
       background-color: lighten($color-danger, 35%);
     }
   }

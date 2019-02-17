@@ -45,6 +45,7 @@
 
     #{$block-name}__input {
       border-color: $color-danger;
+
       background-color: lighten($color-danger, 35%);
     }
   }

@@ -4,12 +4,15 @@
 
 .alert {
   position: relative;
+
+  padding: 0.7em 1.5em 0.7em 1.4em;
+
+  color: $text-color;
+
+  border-radius: $border-radius;
+  background-color: lighten($color-warning, 30%);
   margin-top: $typo-margin-vertical;
   margin-bottom: $typo-margin-vertical;
-  padding: 0.7em 1.5em 0.7em 1.4em;
-  border-radius: $border-radius;
-  color: $text-color;
-  background-color: lighten($color-warning, 30%);
 
   & > * { // stylelint-disable-line  selector-combinator-blacklist
     margin-top: 0;
@@ -22,12 +25,13 @@
 
   &__header {
     display: block;
-    margin-top: 0;
-    margin-bottom: 0.5rem;
+
     font-size: $font-size-h3;
-    font-weight: 400;
     line-height: 1.2;
     color: inherit;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
 
     & + * {
       margin-top: 0;
@@ -38,6 +42,7 @@
     position: absolute;
     top: 0;
     right: 0;
+
     margin: 0;
   }
 

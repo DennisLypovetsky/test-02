@@ -17,6 +17,7 @@
   left: 0;
 
   display: none;
+
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
 
@@ -27,6 +28,7 @@
 
   &__dialog {
     position: relative;
+
     flex-shrink: 0;
     width: 100%;
     margin: 0;
@@ -47,10 +49,12 @@
 
   &__content {
     position: relative;
+
     display: flex;
     flex-direction: column;
     min-width: 100%;
     min-height: 100%;
+
     background-color: #fff;
     outline: 0;
   }
@@ -63,6 +67,7 @@
   &__title {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
+
     font-size: $font-size-h4;
     line-height: 1.2;
     font-weight: 700;
@@ -92,6 +97,7 @@
     right: 0;
     bottom: 0;
     left: 0;
+
     background-color: rgba(0, 0, 0, $opacity);
 
     @media (min-width: $screen-lg) {

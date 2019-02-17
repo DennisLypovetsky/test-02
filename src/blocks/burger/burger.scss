@@ -5,35 +5,43 @@
 .burger {
   position: relative;
   z-index: 1;
+
   display: inline-block;
   width: 30px;
   padding: 0;
-  border: none;
+
   line-height: 30px;
+
+  border: none;
   background: transparent;
   user-select: none;
   cursor: pointer;
 
   > span { // stylelint-disable-line  selector-combinator-blacklist
     position: relative;
+
     display: inline-block;
     width: 100%;
     height: $toggler-part-height;
-    transition: background $transition-time $transition-time;
     vertical-align: middle;
+
     font-size: 0;
     color: transparent;
+
     background: $toggler-part-bg-color;
+    transition: background $transition-time $transition-time;
 
     &:before,
     &:after {
       content: '';
       position: absolute;
       left: 0;
+
       width: 100%;
       height: $toggler-part-height;
-      transition: top $transition-time $transition-time, transform $transition-time;
+
       background: $toggler-part-bg-color;
+      transition: top $transition-time $transition-time, transform $transition-time;
       transform-origin: 50% 50%;
     }
 
@@ -49,8 +57,8 @@
   &--close {
 
     > span { // stylelint-disable-line  selector-combinator-blacklist
-      transition: background $transition-time 0s;
       background: transparent;
+      transition: background $transition-time 0s;
 
       &:before,
       &:after {

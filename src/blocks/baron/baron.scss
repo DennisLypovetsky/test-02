@@ -10,14 +10,17 @@
   $scrollbar-width:           14px;
 
   position: relative;
+
   overflow: hidden;
 
   &__scroller {
     box-sizing: border-box;
+
     width: 100%;
     height: 100%;
     padding: 0;
     margin: 0;
+
     border: 0;
     overflow-y: scroll;
     padding-right: $scrollbar-width;
@@ -35,8 +38,10 @@
     top: 0;
     right: 0;
     bottom: 0;
+
     width: $scrollbar-width;
     opacity: 0;
+
     background-color: $gray-lightest;
 
     #{$block-name}--scrollbar & {
@@ -56,10 +61,12 @@
     position: absolute;
     z-index: 1;
     left: ($scrollbar-width * -1 + 1);
+
     display: none;
     width: ($scrollbar-width - 2);
     opacity: 1;
     pointer-events: auto;
+
     background: $gray-lighten;
 
     #{$block-name}--scrollbar & {

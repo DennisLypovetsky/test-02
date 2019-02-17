@@ -5,23 +5,27 @@
 // visually hidden
 @mixin hide-text {
   position: absolute;
+
+  display: inline;
   width: 1px;
   height: 1px;
-  margin: -1px;
   padding: 0;
-  clip: rect(0 0 0 0);
+  margin: -1px;
+
   overflow: hidden;
+  clip: rect(0 0 0 0);
 }
 
 // unsetting <button> browser styles
 @mixin unbutton {
-  padding-left: unset;
-  padding-right: unset;
 
   font: inherit;
 
-  background-color: unset;
   border: unset;
+
+  background-color: unset;
+  padding-left: unset;
+  padding-right: unset;
 
   &:hover {
     cursor: pointer;

@@ -78,7 +78,9 @@
     # https://github.com/hudochenkov/stylelint-order/blob/master/rules/properties-order/README.md
     "order/properties-order": [[
       {
-        "properties": [
+        groupName: "layout",
+        emptyLineBefore: "always",
+        properties: [
           "content",
           "box-sizing",
           "position",
@@ -87,6 +89,12 @@
           "right",
           "bottom",
           "left",
+        ],
+      },
+      {
+        groupName: "box",
+        emptyLineBefore: "always",
+        properties: [
           "display",
           "flex",
           "flex-wrap",
@@ -116,33 +124,47 @@
           "height",
           "min-height",
           "max-height",
+          "vertical-align",
           "padding",
           "padding-*",
           "margin",
           "margin-*",
-          "border",
-          "border-*",
-          "overflow",
-          "overflow-*",
-        ]
+        ],
       },
       {
-        # "emptyLineBefore": "always",
-        "properties": [
-          "transform",
-          "transform-*",
-          "backface-visibility",
-          "perspective",
-          "perspective-origin",
-          "transition",
-          "transition-*",
-          "animation",
-          "animation-*",
-        ]
+        groupName: "typography",
+        emptyLineBefore: "always",
+        properties: [
+          "font",
+          "font-family",
+          "font-size",
+          "line-height",
+          "color",
+          "text-transform",
+        ],
+      },
+      {
+        groupName: "visual",
+        emptyLineBefore: "always",
+        properties: [
+          "border",
+          "border-top",
+          "border-left",
+          "border-right",
+          "border-bottom",
+          "border-radius",
+          "background",
+          "background-color",
+          "background-image",
+          "background-size",
+          "background-position",
+          "overflow",
+          "overflow-*",
+        ],
       },
     ],
       {
-        "severity": "warning",
+        "severity": "warning"
       }
     ],
     # http://stylelint.io/user-guide/rules/
