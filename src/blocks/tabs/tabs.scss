@@ -13,8 +13,8 @@
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
-    margin: 0;
     padding: 0;
+    margin: 0;
     list-style: none;
 
     &:after {
@@ -76,8 +76,8 @@
 
   &__content-wrapper {
     display: block;
-    border: 1px solid $border-color;
     padding: $field-padding-vertical $field-padding-horizontal;
+    border: 1px solid $border-color;
 
     @media (min-width: $screen-md) {
       border-top: none;

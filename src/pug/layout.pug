@@ -1,9 +1,7 @@
-//- Стандартный шаблон страницы
-
 include mixins.pug
 
 doctype html
-html(class='page  no-js', lang='ru')
+html(class='page  no-js', lang='en')
 
   head
     meta(charset='utf-8')
@@ -26,7 +24,6 @@ html(class='page  no-js', lang='ru')
     //- meta(name='apple-mobile-web-app-status-bar-style', content='#000')
 
     block meta
-      title Home
 
     block head
       link(rel='stylesheet', href='css/style.css')
@@ -37,14 +34,12 @@ html(class='page  no-js', lang='ru')
     noscript У вас отключен JavaScript. Это пугает.
 
     .page__inner
-      .page__content
-        block header
-          p шапка
+      block header
+
+      main.page__content
         block content
-          p содержимое
-      .page__footer-wrapper
-        block footer
-          p подвал
+
+      block footer
 
     block page-bottom
       script(src='js/bundle.js')

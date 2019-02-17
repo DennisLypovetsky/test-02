@@ -3,12 +3,12 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .label {
-  display: inline-block;
   position: relative;
+  display: inline-block;
+  padding: 0.25em 0.4em 0.2em;
   margin: 0 0.1em;
   vertical-align: baseline;
   line-height: 1;
-  padding: 0.25em 0.4em 0.2em;
   background-color: $gray-lightest;
   color: $text-color;
   text-decoration: none;

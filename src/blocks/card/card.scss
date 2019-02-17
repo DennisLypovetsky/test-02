@@ -16,18 +16,18 @@
   margin-bottom: 30px;
 
   &__inner {
-    flex-grow: 1;
     position: relative;
     display: flex;
-    align-items: center;
     flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
     width: 100%;
     margin-bottom: 20px;
   }
 
   &__img-wrap {
-    flex-shrink: 0;
     display: block;
+    flex-shrink: 0;
     margin-bottom: 20px;
   }
 

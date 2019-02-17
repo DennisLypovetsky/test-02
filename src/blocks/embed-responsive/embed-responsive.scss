@@ -3,13 +3,13 @@
 // Не пишите здесь другие селекторы.
 
 .embed-responsive {
-  display: block;
   position: relative;
+  display: block;
   width: 100%;
+  padding: 0;
   overflow: hidden;
   margin-top: $typo-margin-vertical;
   margin-bottom: $typo-margin-vertical;
-  padding: 0;
 
   &::before {
     content: '';

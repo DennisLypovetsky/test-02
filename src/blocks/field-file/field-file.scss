@@ -14,8 +14,8 @@
   }
 
   &__input-wrap {
-    display: block;
     position: relative;
+    display: block;
   }
 
   &__input {
@@ -31,12 +31,12 @@
   }
 
   &__name-text {
+    position: relative;
     display: flex;
     align-items: baseline;
-    position: relative;
     width: 100%;
-    overflow: hidden;
     border: 1px solid $border-color;
+    overflow: hidden;
     border-radius: $border-radius;
     background-color: #fff;
     white-space: nowrap;
@@ -51,11 +51,11 @@
     &:before {
       content: attr(data-button-text);
       display: block;
+      padding: $field-padding-vertical  $field-padding-horizontal;
       background-color: $gray-lightest;
       border-right: 1px solid $border-color;
       margin-right: $field-padding-horizontal;
       line-height: $line-height;
-      padding: $field-padding-vertical  $field-padding-horizontal;
       border-top-left-radius: $border-radius;
       border-bottom-left-radius: $border-radius;
     }

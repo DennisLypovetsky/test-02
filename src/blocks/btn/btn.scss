@@ -6,12 +6,12 @@
   box-sizing: border-box;
   display: inline-block;
   max-width: 100%;
-  overflow: hidden;
+  padding: $field-padding-vertical  $field-padding-horizontal;
   margin: 0;
-  border-radius: $border-radius;
   // border: 1px solid $gray-lighter;
   border: 0;
-  padding: $field-padding-vertical  $field-padding-horizontal;
+  overflow: hidden;
+  border-radius: $border-radius;
   vertical-align: middle;
   white-space: nowrap;
   text-overflow: ellipsis;

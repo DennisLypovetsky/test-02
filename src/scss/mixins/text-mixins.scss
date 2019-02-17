@@ -1,9 +1,37 @@
+//------------------------------------------------------------------------------
+//  Text mixins
+//------------------------------------------------------------------------------
+
+// visually hidden
 @mixin hide-text {
   position: absolute;
-  height: 1px;
   width: 1px;
+  height: 1px;
   margin: -1px;
   padding: 0;
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+// unsetting <button> browser styles
+@mixin unbutton {
+  padding-left: unset;
+  padding-right: unset;
+
+  font: inherit;
+
+  background-color: unset;
+  border: unset;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+// hide (icon) label
+// used for accessibility
+@mixin unfont {
+  font-size: 0;
+  letter-spacing: -0.5em;
+  text-decoration: none;
 }

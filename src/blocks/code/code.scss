@@ -6,11 +6,11 @@
   display: block;
   width: 100%;
   max-height: 500px;
+  padding: 0.5em 1em;
+  border: 1px solid $gray-lighter;
   margin-top: $typo-margin-vertical;
   margin-bottom: $typo-margin-vertical;
   border-radius: $border-radius;
-  border: 1px solid $gray-lighter;
-  padding: 0.5em 1em;
   overflow-x: auto;
   background-color: $gray-lightest;
   white-space: normal;

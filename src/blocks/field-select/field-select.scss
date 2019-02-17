@@ -118,9 +118,9 @@
   }
 
   &__inner {
+    padding: $field-padding-vertical 40px $field-padding-vertical $field-padding-horizontal;
     border: 1px solid $border-color;
     border-radius: $border-radius;
-    padding: $field-padding-vertical 40px $field-padding-vertical $field-padding-horizontal;
     background: #fff;
     font-size: 1em;
     line-height: 1.5;
@@ -128,21 +128,21 @@
 
     #{$block-name}__item--selectable {
       max-width: 100%;
-      white-space: nowrap;
       overflow: hidden;
+      white-space: nowrap;
       text-overflow: ellipsis;
     }
   }
 
   &__list--dropdown {
-    display: none;
     position: absolute;
     z-index: 1;
     top: 100%;
+    display: none;
     width: 100%;
+    border: 1px solid $border-color;
     overflow: hidden;
     margin-top: -1px;
-    border: 1px solid $border-color;
     border-bottom-left-radius: $border-radius;
     border-bottom-right-radius: $border-radius;
     background-color: #fff;

@@ -69,7 +69,7 @@ let prettyOption = {
 
 // Список и настройки плагинов postCSS
 let postCssPlugins = [
-  autoprefixer({grid: true}),
+  autoprefixer(),
   mqpacker({
     sort: true
   }),
@@ -81,9 +81,9 @@ let postCssPlugins = [
 
 function writePugMixinsFile(cb) {
   let allBlocksWithPugFiles = getDirectories('pug');
-  let pugMixins = '//-' + doNotEditMsg.replace(/\n /gm,'\n  ');
-  allBlocksWithPugFiles.forEach(function(blockName) {
-    pugMixins += `include ${dir.blocks.replace(dir.src,'../')}${blockName}/${blockName}.pug\n`;
+  let pugMixins = '//-' + doNotEditMsg.replace(/\n /gm, '\n  ');
+  allBlocksWithPugFiles.forEach(function (blockName) {
+    pugMixins += `include ${dir.blocks.replace(dir.src, '../')}${blockName}/${blockName}.pug\n`;
   });
   fs.writeFileSync(`${dir.src}pug/mixins.pug`, pugMixins);
   cb();
@@ -95,7 +95,7 @@ function compilePug() {
   const fileList = [
     `${dir.src}pages/**/*.pug`
   ];
-  if(!buildLibrary) fileList.push(`!${dir.src}pages/blocks-demo.pug`);
+  if (!buildLibrary) fileList.push(`!${dir.src}pages/blocks-demo.pug`);
   return src(fileList)
     .pipe(plumber({
       errorHandler: function (err) {
@@ -103,7 +103,7 @@ function compilePug() {
         this.emit('end');
       }
     }))
-    .pipe(debug({title: 'Compiles '}))
+    .pipe(debug({ title: 'Compiles ' }))
     .pipe(pug(pugOption))
     .pipe(prettyHtml(prettyOption))
     .pipe(replace(/^(\s*)(<button.+?>)(.*)(<\/button>)/gm, '$1$2\n$1  $3\n$1$4'))
@@ -119,7 +119,7 @@ function compilePugFast() {
   const fileList = [
     `${dir.src}pages/**/*.pug`
   ];
-  if(!buildLibrary) fileList.push(`!${dir.src}pages/blocks-demo.pug`);
+  if (!buildLibrary) fileList.push(`!${dir.src}pages/blocks-demo.pug`);
   return src(fileList, { since: lastRun(compilePugFast) })
     .pipe(plumber({
       errorHandler: function (err) {
@@ -127,7 +127,7 @@ function compilePugFast() {
         this.emit('end');
       }
     }))
-    .pipe(debug({title: 'Compiles '}))
+    .pipe(debug({ title: 'Compiles ' }))
     .pipe(pug(pugOption))
     .pipe(prettyHtml(prettyOption))
     .pipe(replace(/^(\s*)(<button.+?>)(.*)(<\/button>)/gm, '$1$2\n$1  $3\n$1$4'))
@@ -151,15 +151,15 @@ exports.copyAssets = copyAssets;
 
 function copyImg(cb) {
   let copiedImages = [];
-  nth.blocksFromHtml.forEach(function(block) {
+  nth.blocksFromHtml.forEach(function (block) {
     let src = `${dir.blocks}${block}/img`;
-    if(fileExist(src)) copiedImages.push(src);
+    if (fileExist(src)) copiedImages.push(src);
   });
-  nth.config.alwaysAddBlocks.forEach(function(block) {
+  nth.config.alwaysAddBlocks.forEach(function (block) {
     let src = `${dir.blocks}${block}/img`;
-    if(fileExist(src)) copiedImages.push(src);
+    if (fileExist(src)) copiedImages.push(src);
   });
-  if(copiedImages.length) {
+  if (copiedImages.length) {
     (async () => {
       await cpy(copiedImages, `${dir.build}img`);
       cb();
@@ -174,7 +174,7 @@ exports.copyImg = copyImg;
 
 function generateSvgSprite(cb) {
   let spriteSvgPath = `${dir.blocks}sprite-svg/svg/`;
-  if(nth.config.alwaysAddBlocks.indexOf('sprite-svg') > -1 && fileExist(spriteSvgPath)) {
+  if (nth.config.alwaysAddBlocks.indexOf('sprite-svg') > -1 && fileExist(spriteSvgPath)) {
     return src(spriteSvgPath + '*.svg')
       .pipe(svgmin(function () {
         return { plugins: [{ cleanupIDs: { minify: true } }] }
@@ -192,7 +192,7 @@ exports.generateSvgSprite = generateSvgSprite;
 
 function generatePngSprite(cb) {
   let spritePngPath = `${dir.blocks}sprite-png/png/`;
-  if(nth.config.alwaysAddBlocks.indexOf('sprite-png') > -1 && fileExist(spritePngPath)) {
+  if (nth.config.alwaysAddBlocks.indexOf('sprite-png') > -1 && fileExist(spritePngPath)) {
     del(`${dir.blocks}sprite-png/img/*.png`);
     let fileName = 'sprite-' + Math.random().toString().replace(/[^0-9]/g, '') + '.png';
     let spriteData = src(spritePngPath + '*.png')
@@ -204,7 +204,7 @@ function generatePngSprite(cb) {
       }));
     let imgStream = spriteData.img
       .pipe(buffer())
-      .pipe(imagemin([ imagemin.optipng({ optimizationLevel: 5 }) ]))
+      .pipe(imagemin([imagemin.optipng({ optimizationLevel: 5 })]))
       .pipe(dest(`${dir.blocks}sprite-png/img/`));
     let cssStream = spriteData.css
       .pipe(dest(`${dir.blocks}sprite-png/`));
@@ -219,22 +219,22 @@ exports.generatePngSprite = generatePngSprite;
 
 function writeSassImportsFile(cb) {
   const newScssImportsList = [];
-  nth.config.addStyleBefore.forEach(function(src) {
+  nth.config.addStyleBefore.forEach(function (src) {
     newScssImportsList.push(src);
   });
   let allBlocksWithScssFiles = getDirectories('scss');
-  allBlocksWithScssFiles.forEach(function(blockWithScssFile){
+  allBlocksWithScssFiles.forEach(function (blockWithScssFile) {
     if (nth.blocksFromHtml.indexOf(blockWithScssFile) == -1) return;
     newScssImportsList.push(`${dir.blocks}${blockWithScssFile}/${blockWithScssFile}.scss`);
   });
-  nth.config.addStyleAfter.forEach(function(src) {
+  nth.config.addStyleAfter.forEach(function (src) {
     newScssImportsList.push(src);
   });
   let diff = getArraysDiff(newScssImportsList, nth.scssImportsList);
   if (diff.length) {
-    let msg = `\n/*!*${doNotEditMsg.replace(/\n /gm,'\n * ').replace(/\n\n$/,'\n */\n\n')}`;
+    let msg = `\n/*!*${doNotEditMsg.replace(/\n /gm, '\n * ').replace(/\n\n$/, '\n */\n\n')}`;
     let styleImports = msg;
-    newScssImportsList.forEach(function(src) {
+    newScssImportsList.forEach(function (src) {
       styleImports += `@import "${src}";\n`;
     });
     styleImports += msg;
@@ -251,7 +251,7 @@ function compileSass() {
   const fileList = [
     `${dir.src}scss/style.scss`,
   ];
-  if(buildLibrary) fileList.push(`${dir.blocks}blocks-library/blocks-library.scss`);
+  if (buildLibrary) fileList.push(`${dir.blocks}blocks-library/blocks-library.scss`);
   return src(fileList, { sourcemaps: true })
     .pipe(plumber({
       errorHandler: function (err) {
@@ -259,8 +259,8 @@ function compileSass() {
         this.emit('end');
       }
     }))
-    .pipe(debug({title: 'Compiles:'}))
-    .pipe(sass({includePaths: [__dirname+'/']}))
+    .pipe(debug({ title: 'Compiles:' }))
+    .pipe(sass({ includePaths: [__dirname + '/'] }))
     .pipe(postcss(postCssPlugins))
     .pipe(csso({
       restructure: false,
@@ -272,18 +272,18 @@ exports.compileSass = compileSass;
 
 
 function writeJsRequiresFile(cb) {
-  let msg = `\n/*!*${doNotEditMsg.replace(/\n /gm,'\n * ').replace(/\n\n$/,'\n */\n\n')}`;
+  let msg = `\n/*!*${doNotEditMsg.replace(/\n /gm, '\n * ').replace(/\n\n$/, '\n */\n\n')}`;
   let jsRequires = msg + '/* global require */\n\n';
-  nth.config.addJsBefore.forEach(function(src) {
+  nth.config.addJsBefore.forEach(function (src) {
     jsRequires += `require('${src}');\n`;
   });
   const allBlocksWithJsFiles = getDirectories('js');
   const allUsedBlocks = nth.blocksFromHtml.concat(nth.config.alwaysAddBlocks);
-  allBlocksWithJsFiles.forEach(function(blockWithJsFile){
+  allBlocksWithJsFiles.forEach(function (blockWithJsFile) {
     if (allUsedBlocks.indexOf(blockWithJsFile) == -1) return;
     jsRequires += `require('../blocks/${blockWithJsFile}/${blockWithJsFile}.js');\n`;
   });
-  nth.config.addJsAfter.forEach(function(src) {
+  nth.config.addJsAfter.forEach(function (src) {
     jsRequires += `require('${src}');\n`;
   });
   jsRequires += msg;
@@ -298,7 +298,7 @@ function buildJs() {
   const entryList = {
     'bundle': `./${dir.src}js/entry.js`,
   };
-  if(buildLibrary) entryList['blocks-library'] = `./${dir.blocks}blocks-library/blocks-library.js`;
+  if (buildLibrary) entryList['blocks-library'] = `./${dir.blocks}blocks-library/blocks-library.js`;
   return src(`${dir.src}js/entry.js`)
     .pipe(plumber())
     .pipe(webpackStream({
@@ -368,8 +368,8 @@ function serve() {
 
   // Страницы: удаление
   watch([`${dir.src}pages/**/*.pug`], { delay: 100 })
-  // TODO попробовать с events: ['unlink']
-    .on('unlink', function(path) {
+    // TODO попробовать с events: ['unlink']
+    .on('unlink', function (path) {
       let filePathInBuildDir = path.replace(`${dir.src}pages/`, dir.build).replace('.pug', '.html');
       fs.unlink(filePathInBuildDir, (err) => {
         if (err) throw err;
@@ -480,7 +480,7 @@ function getClassesToBlocksList(file, enc, cb) {
   }
   // Проверяем, не является ли обрабатываемый файл исключением
   let processThisFile = true;
-  nth.config.notGetBlocks.forEach(function(item) {
+  nth.config.notGetBlocks.forEach(function (item) {
     if (file.relative.trim() == item.trim()) processThisFile = false;
   });
   // Файл не исключён из обработки, погнали
@@ -513,7 +513,7 @@ function getClassesToBlocksList(file, enc, cb) {
 function filterShowCode(text, options) {
   var lines = text.split('\n');
   var result = '<pre class="code">\n';
-  if (typeof(options['first-line']) !== 'undefined') result = result + '<code>' + options['first-line'] + '</code>\n';
+  if (typeof (options['first-line']) !== 'undefined') result = result + '<code>' + options['first-line'] + '</code>\n';
   for (var i = 0; i < (lines.length - 1); i++) { // (lines.length - 1) для срезания последней строки (пустая)
     result = result + '<code>' + lines[i].replace(/</gm, '&lt;') + '</code>\n';
   }
@@ -527,11 +527,11 @@ function filterShowCode(text, options) {
  * @param  {string} path      Путь до файла или папки
  * @return {boolean}
  */
-function fileExist(filepath){
+function fileExist(filepath) {
   let flag = true;
-  try{
+  try {
     fs.accessSync(filepath, fs.F_OK);
-  }catch(e){
+  } catch (e) {
     flag = false;
   }
   return flag;
@@ -557,5 +557,5 @@ function getDirectories(ext) {
  * @return {array}    Элементы, которые отличаются
  */
 function getArraysDiff(a1, a2) {
-  return a1.filter(i=>!a2.includes(i)).concat(a2.filter(i=>!a1.includes(i)))
+  return a1.filter(i => !a2.includes(i)).concat(a2.filter(i => !a1.includes(i)))
 }

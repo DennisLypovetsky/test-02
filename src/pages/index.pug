@@ -1,7 +1,7 @@
 extends ../pug/layout.pug
 
 block meta
-  title Главная
+  title Pasco — main page
   meta(name='description', content='')
 
 //- block append head
@@ -14,13 +14,13 @@ block header
     +main-nav('10')
 
 block content
-  h1 Заголовок
-  p Содержимое. #[a(href='blocks-demo.html') Библиотека блоков].
+  +b.BUTTON.button
+    span Button
+
+  +btn('hello', 'there hi')
 
 block footer
   +page-footer()
-    p «Подвал»
-    p Контактный телефон: #[a(href='tel:+70000000000') +7 000 000 00 00]
 
 //- block append page-bottom
 //-   script(src='js/some.js')
