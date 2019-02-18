@@ -1,16 +1,8 @@
-// В этом файле должны быть стили для БЭМ-блока logo, его элементов,
+// В этом файле должны быть стили для БЭМ-блока sprite-svg, его элементов,
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
-.logo {
+.sprite-svg {
 
   $block-name:                &; // #{$block-name}__element
-
-  display: flex;
-  align-items: center;
-  align-self: center;
-  min-width: 91px;
-  // min-height: 30px;
-
-  white-space: nowrap;
 }

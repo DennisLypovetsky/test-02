@@ -141,6 +141,7 @@
           "line-height",
           "color",
           "text-transform",
+          "text-decoration",
         ],
       },
       {

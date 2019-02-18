@@ -9,11 +9,55 @@ block meta
 
 block header
   +page-header()
-    +logo('/')
-      img(src='img/demo-logo.svg', alt='Logo', width='64', height='15')
-    +main-nav('10')
+    +e.wrapper--login
+      +b.UL.social-panel
+        +e.LI.item
+          +e.A.link(href='', title='Facebook') Facebook
+            +icon('fb', '16', '16')
+        +e.LI.item
+          +e.A.link(href='', title='Twitter') Twitter
+            +icon('tw', '16', '16')
+        +e.LI.item
+          +e.A.link(href='', title='Pinterest') Pinterest
+            +icon('pn', '16', '16')
+        +e.LI.item
+          +e.A.link(href='', title='Vkontakte') Vkontakte
+            +icon('vk', '16', '16')
+        +e.LI.item
+          +e.A.link(href='', title='Google+') Google+
+            +icon('gl', '16', '16')
+        +e.LI.item
+          +e.A.link(href='', title='Behance') Behance
+            +icon('be', '16', '16')
+        +e.LI.item
+          +e.A.link(href='', title='Instagram') Instagram
+            +icon('ig', '16', '16')
+
+      +b.UL.user-panel
+        +e.LI.item--login
+          +e.A.link(href='', title='Sign In') Sign In
+
+      +b.UL.lang-panel
+        +e.LI.item--en
+          +e.A.link(href='', title='Enlish') Eng
+
+    +e.wrapper--nav
+      +logo('/')
+        img(src='img/logo.png', alt='Pasco logo', width='91', height='18')
+      +main-nav('0')
+      +b.UL.main-sub-nav
+        +e.LI.item--search
+          +e.A.link(href='', title='Search') Search
+            +icon('search', '18', '18')
+        +e.LI.item--vaforite
+          +e.A.link(href='', title='Vaforite') Vaforite
+            +icon('fav', '20', '19')
+        +e.LI.item--cart
+          +e.A.link(href='', title='Cart') Cart
+            +icon('cart', '20', '20')
 
 block content
+  +hero()
 
 block footer
   +page-footer()

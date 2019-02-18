@@ -2,4 +2,100 @@
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
-.page-header {}
+.page-header {
+
+  @include bp-max (1200 - 1) {
+    background-color: $color-main;
+  }
+  z-index: $z-index-header;
+
+  font-family: $font-family--heading;
+  font-size: 14px;
+  color: $white;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+
+  .main-nav {
+
+    @include bp (1200) {
+      grid-column: unset;
+      grid-row: unset;
+    }
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-self: start;
+
+    &__toggler {
+      order: -1;
+    }
+  }
+
+  .logo {
+
+    @include bp-max (1200 - 1) {
+      justify-self: center;
+    }
+  }
+
+  .main-sub-nav {
+
+    @include bp-max (1200 - 1) {
+      justify-self: end;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__wrapper {
+
+    &--login {
+
+      @include bp (1200) {
+        @include break-out--before (darken($gray, 3%)); //#191919
+
+        // padding-top: 12px;
+        // padding-bottom: 12px;
+      }
+      display: grid;
+      align-items: center;
+      // padding-top: 26px;
+      // padding-bottom: 26px;
+
+      font-size: 16px;
+      grid-template-columns: 1fr max-content max-content;
+
+      // .social-panel,
+      // .user-panel,
+      // .lang-panel {
+      //   opacity: 0.38;
+
+      //   &:hover {
+      //     opacity: 1;
+      //   }
+      // }
+    }
+
+    &--nav {
+      // justify-items: center;
+
+      @include bp-max (1200 - 1) {
+        padding-top: 26px;
+        padding-bottom: 26px;
+      }
+
+      @include bp (1200) {
+        display: grid;
+        align-items: center;
+        justify-content: space-between;
+        grid-template-columns: repeat(3, auto);
+      }
+      display: grid;
+      align-items: start;
+      grid-template-columns: repeat(3, minmax(max-content, 1fr));
+    }
+  }
+}

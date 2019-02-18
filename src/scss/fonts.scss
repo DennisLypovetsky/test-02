@@ -27,8 +27,8 @@
   src:
     local('Montserrat Light'),
     local('Montserrat-Light'),
-    url('../fonts/montserrat-v12-latin-300.woff2') format('woff2'),
-    url('../fonts/montserrat-v12-latin-300.woff') format('woff');
+    url('../fonts/montserrat-v12-cyrillic_latin-300.woff2') format('woff2'),
+    url('../fonts/montserrat-v12-cyrillic_latin-300.woff') format('woff');
 }
 
 @font-face {
@@ -38,8 +38,8 @@
   src:
     local('Montserrat Regular'),
     local('Montserrat-Regular'),
-    url('../fonts/montserrat-v12-latin-regular.woff2') format('woff2'),
-    url('../fonts/montserrat-v12-latin-regular.woff') format('woff');
+    url('../fonts/montserrat-v12-cyrillic_latin-regular.woff2') format('woff2'),
+    url('../fonts/montserrat-v12-cyrillic_latin-regular.woff') format('woff');
 }
 
 @font-face {
@@ -49,8 +49,8 @@
   src:
     local('Montserrat Bold'),
     local('Montserrat-Bold'),
-    url('../fonts/montserrat-v12-latin-700.woff2') format('woff2'),
-    url('../fonts/montserrat-v12-latin-700.woff') format('woff');
+    url('../fonts/montserrat-v12-cyrillic_latin-700.woff2') format('woff2'),
+    url('../fonts/montserrat-v12-cyrillic_latin-700.woff') format('woff');
 }
 
 @font-face {
@@ -60,6 +60,6 @@
   src:
     local('Montserrat Black'),
     local('Montserrat-Black'),
-    url('../fonts/montserrat-v12-latin-900.woff2') format('woff2'),
-    url('../fonts/montserrat-v12-latin-900.woff') format('woff');
+    url('../fonts/montserrat-v12-cyrillic_latin-900.woff2') format('woff2'),
+    url('../fonts/montserrat-v12-cyrillic_latin-900.woff') format('woff');
 }

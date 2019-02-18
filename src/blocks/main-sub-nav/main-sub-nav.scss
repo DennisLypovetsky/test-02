@@ -1,0 +1,52 @@
+// В этом файле должны быть стили для БЭМ-блока main-sub-nav, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.main-sub-nav {
+
+  display: flex;
+  // align-self: center;
+
+  list-style-type: none;
+
+  .icon {
+    width: 22px;
+    height: 20px;
+  }
+
+  &__item {
+
+    @include bp-max (1200) {
+
+      &:not(#{$block-name}__item--cart) {
+        display: none;
+      }
+    }
+
+    &:not(:last-child) {
+      border-right: 1px solid lighten($gray, 62%); // rgba(#b4b4b4, 0.38)
+    }
+  }
+
+  &__link {
+
+    @include unfont ();
+    // @include size (20px);
+
+    display: flex;
+    padding: 5px 14px;
+
+    color: inherit;
+    text-decoration: none;
+
+    // background-color: #333333;
+
+    &:hover,
+    &:focus {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+
+  $block-name:                &; // #{$block-name}__element
+}

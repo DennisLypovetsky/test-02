@@ -13,10 +13,10 @@
     min-width: 2em;
     // border: 1px solid $border-color;
     padding: 0.3em 0.6em;
-    text-decoration: none;
-    text-align: center;
 
     color: $text-color;
+    text-decoration: none;
+    text-align: center;
 
     & + & {
       border-left: 0;
@@ -24,9 +24,9 @@
 
     &:hover,
     &:focus {
-      text-decoration: none;
 
       color: $text-color;
+      text-decoration: none;
     }
 
     @at-root a#{&} {

@@ -3,13 +3,10 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .inner {
+  @include pd (20px);
 
-  $block-name:                &; // #{$block-name}__element
+  @include bp (1210) {
 
-
-
-  @include bp (1170) {
-    padding-left: calc((100vw - 1170px) / 2); // max-width: 1170px;
-    padding-right: calc((100vw - 1170px) / 2); // max-width: 1170px;
+    @include pd (calc((100vw - 1170px) / 2)); // max-width: 1170px
   }
 }

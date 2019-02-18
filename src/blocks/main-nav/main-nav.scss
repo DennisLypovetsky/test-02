@@ -4,11 +4,6 @@
 
 .main-nav {
 
-  $block-name:                &; // #{$block-name}__element
-
-  position: relative;
-  z-index: 10;
-
   // первый уровень
   &__list {
     padding: 0;
@@ -54,24 +49,43 @@
     &--active {
 
       & > #{$block-name}__link { // stylelint-disable-line  selector-combinator-blacklist
-        color: #000;
+        // color: #000;
+
+        @media (min-width: $menu-desktop-width) {
+          border-bottom: 4px solid $red;
+        }
+      }
+    }
+
+    &--has-child {
+
+      & > #{$block-name}__link {
+        // background-color: #ddd;
+
+        &::after {
+          @include size (1.5em);
+          content: '';
+
+          display: inline-block;
+          vertical-align: top; // looks more center then "middle"
+
+          line-height: inherit;
+
+          background-image: url('/img/baseline-keyboard_arrow_down-24px.svg');
+          background-size: 100%;
+          margin-left: 0.5em;
+          background-repeat: no-repeat;
+        }
       }
     }
   }
 
   &__link {
     display: block;
-    padding: 0.5em 1em;
+    padding: 25px 1em 21px; // 21px bottom bc of 4px border
+
+    color: inherit;
     text-decoration: none;
-
-    background-color: #fff;
-
-    &:hover,
-    &:focus {
-      text-decoration: none;
-
-      background-color: $gray-lightest;
-    }
 
     &--lvl-2 {
       min-width: 200px;
@@ -88,11 +102,25 @@
         padding-left: 2.4em;
       }
     }
+
+    // background-color: #fff;
+
+    &:hover,
+    &:focus {
+      color: inherit;
+      text-decoration: none;
+
+      // background-color: $gray-lightest;
+    }
   }
 
   &__sublist-wrapper {
 
     &--lvl-2 {
+
+      @media (max-width: $menu-desktop-width - 1) {
+        padding-left: 2em;
+      }
 
       @media (min-width: $menu-desktop-width) {
         position: absolute;
@@ -119,6 +147,10 @@
     }
 
     &--lvl-3 {
+
+      @media (max-width: $menu-desktop-width - 1) {
+        padding-left: 2em;
+      }
 
       @media (min-width: $menu-desktop-width) {
         position: absolute;
@@ -164,4 +196,6 @@
       display: none;
     }
   }
+
+  $block-name:                &; // #{$block-name}__element
 }
