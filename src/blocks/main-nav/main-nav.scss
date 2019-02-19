@@ -54,7 +54,7 @@
         // color: #000;
 
         @media (min-width: $menu-desktop-width) {
-          border-bottom: 4px solid $red;
+          box-shadow: 0 4px 0 $red;
         }
       }
     }
@@ -198,6 +198,4 @@
       display: none;
     }
   }
-
-  $block-name:                &; // #{$block-name}__element
 }
