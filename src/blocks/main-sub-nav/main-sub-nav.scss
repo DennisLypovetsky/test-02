@@ -50,9 +50,10 @@
       text-decoration: none;
     }
 
-    &::after {
-
+    // cart tooltip start
+    &:not([data-tooltip=''])::after {
       @include round (24px);
+
       content: attr(data-tooltip);
       position: absolute;
       top: -0.75em;
@@ -72,5 +73,6 @@
       letter-spacing: 0.7px;
       box-shadow: 0 2px 13px rgba(0, 0, 0, 0.12);
     }
+    // cart tooltip end
   }
 }
