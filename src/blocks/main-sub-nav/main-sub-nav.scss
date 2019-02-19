@@ -4,6 +4,8 @@
 
 .main-sub-nav {
 
+  $block-name:                &; // #{$block-name}__element
+
   display: flex;
   // align-self: center;
 

@@ -4,6 +4,8 @@
 
 .main-nav {
 
+  $block-name:                &; // #{$block-name}__element
+
   // первый уровень
   &__list {
     padding: 0;
