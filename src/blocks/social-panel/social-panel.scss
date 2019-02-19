@@ -4,10 +4,7 @@
 
 .social-panel {
 
-  @include bp (1200) {
-    display: flex;
-    margin-left: -0.5rem;
-  }
+  $block-name:                &; // #{$block-name}__element
 
   display: none;
 
@@ -51,5 +48,8 @@
     }
   }
 
-  $block-name:                &; // #{$block-name}__element
+  @include bp (1200) {
+    display: flex;
+    margin-left: -0.5rem;
+  }
 }

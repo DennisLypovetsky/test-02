@@ -41,6 +41,8 @@
     "order/order": [
       # Кастомные свойства
       "custom-properties",
+      # $variable
+      "dollar-variables",
       # Инклуды примесей
       {
         "type": "at-rule",
@@ -98,6 +100,9 @@
         properties: [
           "display",
           "flex",
+          "grid",
+          "grid-template",
+          "grid-template-*",
           "flex-wrap",
           "flex-basis",
           "flex-direction",
@@ -109,7 +114,6 @@
           "align-self",
           "justify-content",
           "order",
-          "grid",
           "grid-area",
           "grid-auto-*",
           "grid-column",
@@ -117,8 +121,6 @@
           "grid-gap",
           "grid-row",
           "grid-row-*",
-          "grid-template",
-          "grid-template-*",
           "width",
           "min-width",
           "max-width",

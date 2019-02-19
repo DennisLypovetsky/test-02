@@ -45,6 +45,13 @@
     }
   }
 
+  .lang-panel {
+
+    @include bp-max (1200 - 1) {
+      order: -1;
+    }
+  }
+
   &__inner {
     display: flex;
     flex-direction: column;
@@ -53,21 +60,29 @@
   &__wrapper {
 
     &--login {
+      @include break-out--before (#303f9f); // #303f9f
       display: grid;
-      align-items: center;
-
-      font-size: 16px;
       grid-template-columns: 1fr max-content max-content;
 
+      align-items: center;
+      padding-top: 12px;
+      padding-bottom: 12px;
+
+      font-size: 16px;
+
       @include bp (1200) {
-        @include break-out--before (darken($gray, 3%)); //#191919
+        @include break-out--before (darken($gray, 3%)); // #191919
+
+        padding-top: 0;
+        padding-bottom: 0;
       }
     }
 
     &--nav {
       display: grid;
-      align-items: start;
       grid-template-columns: repeat(3, minmax(max-content, 1fr));
+
+      align-items: start;
 
       @include bp-max (1200 - 1) {
         padding-top: 26px;

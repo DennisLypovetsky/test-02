@@ -4,6 +4,8 @@
 
 .lang-panel {
 
+  $block-name:                &; // #{$block-name}__element
+
   display: flex;
   padding-left: 16px + 8;
 
@@ -49,8 +51,6 @@
       text-decoration: none;
     }
   }
-
-  $block-name:                &; // #{$block-name}__element
 
   &:hover,
   &:focus {
