@@ -10,11 +10,11 @@
 
   $block-name:                &; // #{$block-name}__element
   position: fixed;
-  z-index: $z-index-modal;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  z-index: $z-index-modal;
 
   display: none;
 
@@ -65,13 +65,13 @@
   }
 
   &__title {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
 
     font-size: $font-size-h4;
     line-height: 1.2;
-    font-weight: 700;
     color: currentColor;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    font-weight: 700;
   }
 
   &__close {
@@ -92,11 +92,11 @@
 
   &__backdrop {
     position: fixed;
-    z-index: ($z-index-modal - 1);
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+    z-index: ($z-index-modal - 1);
 
     background-color: rgba(0, 0, 0, $opacity);
 

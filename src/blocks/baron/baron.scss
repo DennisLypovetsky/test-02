@@ -34,15 +34,15 @@
 
   &__track {
     position: absolute;
-    z-index: 3;
     top: 0;
     right: 0;
     bottom: 0;
+    z-index: 3;
 
     width: $scrollbar-width;
-    opacity: 0;
 
     background-color: $gray-lightest;
+    opacity: 0;
 
     #{$block-name}--scrollbar & {
       opacity: 1;
@@ -59,15 +59,15 @@
   &__bar {
     box-sizing: border-box;
     position: absolute;
-    z-index: 1;
     left: ($scrollbar-width * -1 + 1);
+    z-index: 1;
 
     display: none;
     width: ($scrollbar-width - 2);
-    opacity: 1;
-    pointer-events: auto;
 
     background: $gray-lighten;
+    opacity: 1;
+    pointer-events: auto;
 
     #{$block-name}--scrollbar & {
       display: block;
