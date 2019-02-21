@@ -1,0 +1,17 @@
+// В этом файле должны быть стили для БЭМ-блока promo, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.promo {
+
+  $block-name:                &; // #{$block-name}__element
+  @include mg (auto);
+
+  max-width: 840px;
+
+  text-align: center;
+
+  &__heading {
+    @include mg-bottom (80px);
+  }
+}

@@ -166,6 +166,16 @@
           "overflow-*",
         ],
       },
+      {
+        groupName: "other",
+        emptyLineBefore: "always",
+        properties: [
+          "transition",
+          "transition-*",
+          "animation",
+          "animation-*",
+        ],
+      },
     ],
       {
         "severity": "warning"

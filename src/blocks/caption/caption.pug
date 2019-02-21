@@ -1,0 +1,34 @@
+//- Все примеси в этом файле должны начинаться c имени блока (caption)
+
+mixin caption(name, src, date, time, datetime, mods)
+
+  //- Принимает:
+  //-   name              {string} - author name
+  //-   src               {string} - image src
+  //-   date              {string} - date of the post
+  //-   time              {string} - time of the post
+  //-   datetime          {string} - date attribute for time
+  //- Вызов:
+        +caption('Henry Little', 'img/rSuiu_Hr.jpg', 'April 28, 2016', '10:15', '2016-04-28', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' caption--' + modsList[i].trim();
+      }
+    }
+
+  +b.caption.__caption(class=allMods)&attributes(attributes)
+    +e.img-wrapper
+      +e.IMG.img(src=src, alt=name)
+    +e.P.text--title
+      +e.STRONG.title= name
+    +e.P.text--time
+      +e.TIME.time(datetime=datetime + ' ' + time)
+        span= date
+        span= time
+
+    block

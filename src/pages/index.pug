@@ -59,6 +59,22 @@ block header
 block content
   +hero()
 
+    - var n = 0;
+      +b.swipe.__swipe#hero-slider
+        +e.UL.wrapper
+          while n++ < 3
+            +e.LI.item
+              +promo('5 Ways milllennials can start building their future today', 'inspiration', 'tag2')
+
+                +caption('Henry Little', 'img/rSuiu_Hr.jpg', 'April 28, 2016', '10:15', '2016-04-28')
+
+                  +b.comments-counter.__comments-counter
+                    +e.A.link--comments(href='', data-comments-count='28') Comments
+                    +e.A.link--likes(href='', data-likes-count='07') Likes
+
+        +e.BUTTON.button--left(onclick='mySwipe.prev()') Left
+        +e.BUTTON.button--right(onclick='mySwipe.next()') Right
+
 block footer
   +page-footer()
 

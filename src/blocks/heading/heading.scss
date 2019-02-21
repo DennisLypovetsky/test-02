@@ -1,0 +1,43 @@
+// В этом файле должны быть стили для БЭМ-блока heading, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.heading {
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__taglist {
+    font-family: $font-family--heading;
+    color: inherit;
+
+    list-style-type: none;
+
+    &--promo {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 30px;
+
+      font-size: 28px;
+      color: rgba($white, 0.7);
+      font-variant: small-caps;
+      letter-spacing: 1.4px;
+    }
+  }
+
+  &__tag {
+    @include mg-right(1em);
+  }
+
+  &__title {
+
+    &--promo {
+      color: inherit;
+    }
+  }
+
+  &__button {
+    @include mg (auto);
+    margin-top: 40px;
+  }
+}

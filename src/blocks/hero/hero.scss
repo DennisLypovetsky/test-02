@@ -6,9 +6,19 @@
 
   $block-name:                &; // #{$block-name}__element
 
-  min-height: 100vh;
+  min-height: 80vh;
   margin-top: -25px - 30 - 12; // putting block under header [-pd-bottom - pd-top - fz]
 
-  // background-color: #dddddd;
-  background-image: linear-gradient(to bottom, #ddd, rgba(#fff, 0.001));
+  color: $white;
+
+  background-image: linear-gradient(to bottom, #666, rgba(#fff, 0.001));
+
+  @include bp-max (1200 - 1) {
+    display: none;
+  }
+
+  &__swipe {
+    padding-top: calc(15vh + (25px + 30px + 12px));
+    padding-bottom: 68px;
+  }
 }

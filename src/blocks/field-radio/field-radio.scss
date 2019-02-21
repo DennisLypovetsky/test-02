@@ -101,6 +101,7 @@
 
       border-radius: 50%;
       background-color: currentColor;
+
       transition: opacity $transition-time;
 
       @at-root input:checked ~ & {

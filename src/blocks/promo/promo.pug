@@ -1,0 +1,22 @@
+//- Все примеси в этом файле должны начинаться c имени блока (promo)
+
+mixin promo(title, ...taglist)
+
+  //- Принимает:
+  //-   title    {string} - h1 heading
+  //-   tag      {string} - list of tags
+  //- Вызов:
+        +promo('Title', 'tag 1', 'tag 2')
+
+  +b.ARTICLE.promo&attributes(attributes)
+    +b.HEADER.heading.__heading
+      +e.UL.taglist--promo
+        each tag in taglist
+          +e.LI.tag= tag
+
+      +e.H1.title--promo= title
+
+      +e.BUTTON.button.button--main
+        span Read more
+
+    block

@@ -1,0 +1,49 @@
+// В этом файле должны быть стили для БЭМ-блока comments-counter, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.comments-counter {
+
+  $block-name:                &; // #{$block-name}__element
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  font-family: $font-family--heading;
+  font-size: 12px;
+  color: $white;
+  letter-spacing: 0.6px;
+
+  opacity: 0.7;
+
+  &__link {
+    @include mg-right (2em);
+    @include unlink();
+    background-size: 14px;
+    background-position: 0;
+    padding-left: calc(14px + 0.5em);
+
+    background-repeat: no-repeat;
+
+    &::after {
+      margin-left: 0.5em;
+    }
+
+    &--comments {
+      background-image: url(/img/comments.svg);
+
+      &:not([data-comments-count=''])::after {
+        content: '(' + '' attr(data-comments-count) '' + ')';
+      }
+    }
+
+    &--likes {
+      background-image: url(/img/likes.svg);
+
+      &:not([data-likes-count=''])::after {
+        content: '(' + '' attr(data-likes-count) '' + ')';
+      }
+    }
+  }
+}

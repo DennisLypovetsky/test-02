@@ -3,6 +3,8 @@
   "extends": "eslint:recommended",
   "globals": {
     "require": true,
+    "window": true,
+    "document": true
   },
   "rules": {
     "strict": 0

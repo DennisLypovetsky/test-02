@@ -27,6 +27,7 @@ $transition-time:             0.3s !default;
   background-position: center;
   background-repeat: no-repeat;
   transform: rotate(180deg);
+
   transition: opacity $transition-time;
 
   .js & {

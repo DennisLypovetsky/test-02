@@ -45,6 +45,13 @@
     }
   }
 
+  .social-panel {
+
+    @include bp-max (1200 - 1) {
+      display: none;
+    }
+  }
+
   .lang-panel {
 
     @include bp-max (1200 - 1) {

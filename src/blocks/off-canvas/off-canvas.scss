@@ -19,6 +19,7 @@ $off-canvas-width:            250px !default; // ширина этого бло�
       z-index: 1;
       opacity: 1;
       visibility: visible;
+
       transition: opacity $transition-time ease;
     }
 
@@ -45,6 +46,7 @@ $off-canvas-width:            250px !default; // ширина этого бло�
     background-color: $gray-darkest;
     overflow-y: auto;
     backface-visibility: hidden;
+
     transition: transform $transition-time ease;
 
     .js & {
@@ -93,6 +95,7 @@ $off-canvas-width:            250px !default; // ширина этого бло�
 
   &__page-content {
     backface-visibility: hidden;
+
     transition: transform $transition-time ease;
   }
 
