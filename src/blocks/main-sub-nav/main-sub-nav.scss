@@ -51,27 +51,30 @@
     }
 
     // cart tooltip start
-    &:not([data-tooltip=''])::after {
-      @include round (24px);
+    #{$block-name}__item--cart & {
 
-      content: attr(data-tooltip);
-      position: absolute;
-      top: -0.75em;
-      right: -0.5em;
-      z-index: -1;
+      &:not([data-tooltip=''])::after {
+        @include round (24px);
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+        content: attr(data-tooltip);
+        position: absolute;
+        top: -0.75em;
+        right: -0.5em;
+        z-index: -1;
 
-      font-size: 13px; // 14 in design
-      color: $white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-      background-color: $red;
-      font-weight: 400;
-      text-align: center;
-      letter-spacing: 0.7px;
-      box-shadow: 0 2px 13px rgba(0, 0, 0, 0.12);
+        font-size: 13px; // 14 in design
+        color: $white;
+
+        background-color: $red;
+        font-weight: 400;
+        text-align: center;
+        letter-spacing: 0.7px;
+        box-shadow: 0 2px 13px rgba(0, 0, 0, 0.12);
+      }
     }
     // cart tooltip end
   }
