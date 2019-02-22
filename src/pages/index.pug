@@ -58,22 +58,38 @@ block header
 
 block content
   +hero()
+    +b.swipe.__swipe#hero-slider
+      +e.UL.wrapper
+          +e.LI.item
+            +promo('5 Ways milllennials can start building their future today', 'inspiration')
 
-    - var n = 0;
-      +b.swipe.__swipe#hero-slider
-        +e.UL.wrapper
-          while n++ < 3
-            +e.LI.item
-              +promo('5 Ways milllennials can start building their future today', 'inspiration', 'tag2')
+              +caption('Henry Little', 'img/rSuiu_Hr.jpg', 'April 28, 2016', '10:15', '2016-04-28')
 
-                +caption('Henry Little', 'img/rSuiu_Hr.jpg', 'April 28, 2016', '10:15', '2016-04-28')
+                +b.comments-counter.__comments-counter
+                  +e.A.link--comments(href='', data-comments-count='28') Comments
+                  +e.A.link--likes(href='', data-likes-count='07') Likes
 
-                  +b.comments-counter.__comments-counter
-                    +e.A.link--comments(href='', data-comments-count='28') Comments
-                    +e.A.link--likes(href='', data-likes-count='07') Likes
+          +e.LI.item
+            +promo('Start building future today', 'inspiration', 'art')
 
-        +e.BUTTON.button--left(onclick='mySwipe.prev()') Left
-        +e.BUTTON.button--right(onclick='mySwipe.next()') Right
+              +caption('Lia Hiu', 'img/44.jpg', 'April 28, 2016', '12:15', '2016-04-28')
+
+                +b.comments-counter.__comments-counter
+                  +e.A.link--comments(href='', data-comments-count='58') Comments
+                  +e.A.link--likes(href='', data-likes-count='27') Likes
+
+          +e.LI.item
+            +promo('Not today', 'reality')
+
+              +caption('Isaac Heart', 'img/photo-1504904488824-dbeda3cb530b.jpg', 'May 5, 2017', '23:15', '2017-05-05')
+
+                +b.comments-counter.__comments-counter
+                  +e.A.link--comments(href='', data-comments-count='1') Comments
+                  +e.A.link--likes(href='', data-likes-count='') Likes
+
+      +e.BUTTON.button--left(onclick='mySwipe.prev()', title='Left') Left
+      +e.BUTTON.button--right(onclick='mySwipe.next()', title='Right') Right
+
 
 block footer
   +page-footer()

@@ -25,4 +25,32 @@
 
     width: 100%;
   }
+
+  &__button {
+    @include unbutton ();
+    @include unfont ();
+
+    position: absolute;
+    top: 40%;
+
+    &--left {
+      @include sprite ($temp-icon-left-arrow);
+
+      left: 40px;
+    }
+
+    &--right {
+      @include sprite ($temp-icon-right-arrow);
+      right: 40px;
+    }
+
+    &::before {
+
+      @include size (200%);
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+    }
+  }
 }
