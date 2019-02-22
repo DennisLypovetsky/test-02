@@ -1,20 +1,9 @@
-// В этом файле должны быть стили для БЭМ-блока heading, его элементов,
+// В этом файле должны быть стили для БЭМ-блока visually-hidden, его элементов,
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
-.heading {
+.visually-hidden {
 
   $block-name:                &; // #{$block-name}__element
-
-  &__title {
-
-    &--promo {
-      color: inherit;
-    }
-  }
-
-  &__button {
-    @include mg (auto);
-    margin-top: 40px;
-  }
+  @include hide-text ();
 }

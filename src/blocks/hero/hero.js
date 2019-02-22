@@ -6,8 +6,8 @@ ready(function () {
 
   window.mySwipe = new Swipe(document.getElementById('hero-slider'), {
     startSlide: 0,
-    auto: 3000,
-    draggable: true,
+    // auto: 3000,
+    draggable: false,
     autoRestart: false,
     continuous: true
   });

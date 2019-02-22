@@ -10,7 +10,7 @@ mixin promo(title, ...taglist)
 
   +b.ARTICLE.promo&attributes(attributes)
     +b.HEADER.heading.__heading
-      +e.UL.taglist--promo
+      +b.UL.taglist--promo
         each tag in taglist
           +e.LI.tag= tag
 

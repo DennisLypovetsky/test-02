@@ -1,0 +1,28 @@
+// В этом файле должны быть стили для БЭМ-блока taglist, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.taglist {
+
+  $block-name:                &; // #{$block-name}__element
+  font-family: $font-family--heading;
+  color: inherit;
+
+  list-style-type: none;
+
+  &__tag {
+    @include mg-right(1em);
+  }
+
+  &--promo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 30px;
+
+    font-size: 28px;
+    color: rgba($white, 0.7);
+    font-variant: small-caps;
+    letter-spacing: 1.4px;
+  }
+}

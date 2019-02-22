@@ -1,0 +1,45 @@
+// В этом файле должны быть стили для БЭМ-блока filter, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.filter {
+
+  $block-name:                &; // #{$block-name}__element
+  @include break-out--before ($white);
+
+  display: flex;
+  align-items: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-bottom: 40px;
+
+  font-family: $font-family--heading;
+  font-size: 16px;
+  font-variant: small-caps;
+  letter-spacing: 0.8px;
+
+  background-color: #fff;
+
+  &:before {
+    box-shadow: 0 1px 0 #ddd;
+  }
+
+  &__title {
+    margin-right: 20px;
+
+    font-weight: 700;
+
+    text-transform: lowercase;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    list-style-type: none;
+  }
+
+  &__item {
+    @include mg-right (1em);
+  }
+}

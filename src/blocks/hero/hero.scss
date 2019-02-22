@@ -6,19 +6,41 @@
 
   $block-name:                &; // #{$block-name}__element
 
-  min-height: 80vh;
+  // min-height: 100vh;
   margin-top: -25px - 30 - 12; // putting block under header [-pd-bottom - pd-top - fz]
 
   color: $white;
 
   background-image: linear-gradient(to bottom, #666, rgba(#fff, 0.001));
 
-  @include bp-max (1200 - 1) {
-    display: none;
-  }
-
-  &__swipe {
+  .swipe__item {
+    min-height: 100vh;
     padding-top: calc(15vh + (25px + 30px + 12px));
     padding-bottom: 68px;
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+    &::after {
+
+      @include size (100%);
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+
+      background-color: rgba($gray, 0.87);
+    }
+  }
+
+  .promo {
+    position: relative;
+    z-index: 2;
+  }
+
+  @include bp-max (1200 - 1) {
+    display: none;
   }
 }

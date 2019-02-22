@@ -223,8 +223,8 @@ blockquote,
 pre,
 address,
 figure {
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: unset;
+  padding: unset;
   // @include mg-bottom($typo-margin-vertical);
   // margin-bottom: $typo-margin-vertical;
 }
@@ -237,13 +237,13 @@ ul,
 ol {
   padding: unset;
 
-  margin-bottom: 0;
+  margin-bottom: unset;
   // @include mg-bottom($typo-margin-vertical);
 
   ul,
   ol {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: unset;
+    margin-bottom: unset;
   }
 }
 
@@ -293,9 +293,9 @@ strong {
 // }
 
 blockquote {
-  padding: 0;
-  margin-left: 0;
-  margin-right: 0;
+  padding: unset;
+  margin-left: unset;
+  margin-right: unset;
 }
 
 // samp,

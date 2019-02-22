@@ -60,28 +60,28 @@ block content
   +hero()
     +b.swipe.__swipe#hero-slider
       +e.UL.wrapper
-          +e.LI.item
+          +e.LI.item(style='background-image: url(//source.unsplash.com/2000x1500);')
             +promo('5 Ways milllennials can start building their future today', 'inspiration')
 
-              +caption('Henry Little', 'img/rSuiu_Hr.jpg', 'April 28, 2016', '10:15', '2016-04-28')
+              +caption('Henry Little', 'img/rSuiu_Hr.jpg', 'April 28, 2016', '10:15', '2016-04-28', 'caption--promo')
 
-                +b.comments-counter.__comments-counter
+                +b.comments-counter--hero.__comments-counter
                   +e.A.link--comments(href='', data-comments-count='28') Comments
                   +e.A.link--likes(href='', data-likes-count='07') Likes
 
-          +e.LI.item
+          +e.LI.item(style='background-image: url(//source.unsplash.com/2000x1501);')
             +promo('Start building future today', 'inspiration', 'art')
 
-              +caption('Lia Hiu', 'img/44.jpg', 'April 28, 2016', '12:15', '2016-04-28')
+              +caption('Lia Hiu', 'img/44.jpg', 'April 28, 2016', '12:15', '2016-04-28', 'caption--promo')
 
                 +b.comments-counter.__comments-counter
                   +e.A.link--comments(href='', data-comments-count='58') Comments
                   +e.A.link--likes(href='', data-likes-count='27') Likes
 
-          +e.LI.item
+          +e.LI.item(style='background-image: url(//source.unsplash.com/2000x1502);')
             +promo('Not today', 'reality')
 
-              +caption('Isaac Heart', 'img/photo-1504904488824-dbeda3cb530b.jpg', 'May 5, 2017', '23:15', '2017-05-05')
+              +caption('Isaac Heart', 'img/photo-1504904488824-dbeda3cb530b.jpg', 'May 5, 2017', '23:15', '2017-05-05', 'caption--promo')
 
                 +b.comments-counter.__comments-counter
                   +e.A.link--comments(href='', data-comments-count='1') Comments
@@ -89,6 +89,44 @@ block content
 
       +e.BUTTON.button--left(onclick='mySwipe.prev()', title='Left') Left
       +e.BUTTON.button--right(onclick='mySwipe.next()', title='Right') Right
+
+  +b.SECTION.blog
+    +e.inner.inner
+      +b.HEADER.heading.visually-hidden
+        +e.H2.title Blog feed
+      +b.filter.__filter
+        +e.B.title Sort blog:
+        +e.UL.list
+          +e.LI.item
+            +e.BUTTON.button.button--filter.active
+              span All
+          +e.LI.item
+            +e.BUTTON.button.button--filter
+              span Photography
+          +e.LI.item
+            +e.BUTTON.button.button--filter
+              span Lifestyle
+          +e.LI.item
+            +e.BUTTON.button.button--filter
+              span Trip
+          +e.LI.item
+            +e.BUTTON.button.button--filter
+              span Inspiration
+
+      +b.feed
+        +b.ARTICLE.card
+          +e.FIGURE.img-wrapper
+            +e.IMG.img(src='//source.unsplash.com/820x420', alt='')
+            +e.FIGCAPTION.nav
+              +b.UL.taglist
+                +e.LI.tag Lifestyle
+              +b.comments-counter--card
+                +e.A.link--comments(href='', data-comments-count='28', aria-label='Comments')
+                +e.A.link--likes(href='', data-likes-count='07', aria-label='Likes')
+
+
+          +caption('Henry Little', 'img/rSuiu_Hr.jpg', 'April 28, 2016', '10:15', '2016-04-28')
+
 
 
 block footer
