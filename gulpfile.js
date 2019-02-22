@@ -69,7 +69,9 @@ let prettyOption = {
 
 // Список и настройки плагинов postCSS
 let postCssPlugins = [
-  autoprefixer(),
+  autoprefixer({
+    flexbox: false
+  }),
   mqpacker({
     sort: true
   }),
