@@ -44,11 +44,12 @@
 
   &--hero {
 
-    &::after {
-      margin-left: 0.5em;
-    }
 
     #{$block-name}__link {
+
+      &::after {
+        margin-left: 0.5em;
+      }
 
       &--comments {
 
