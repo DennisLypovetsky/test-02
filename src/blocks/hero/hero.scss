@@ -7,7 +7,7 @@
   $block-name:                &; // #{$block-name}__element
 
   // min-height: 100vh;
-  margin-top: -25px - 30 - 12; // putting block under header [-pd-bottom - pd-top - fz]
+  margin-top: -68px; // putting block under header half
 
   color: $white;
 
@@ -15,7 +15,7 @@
 
   .swipe__item {
     min-height: 100vh;
-    padding-top: calc(15vh + (25px + 30px + 12px));
+    padding-top: calc(15vh + 68px);
     padding-bottom: 68px;
 
     background-repeat: no-repeat;

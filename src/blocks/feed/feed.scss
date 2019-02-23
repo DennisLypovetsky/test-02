@@ -5,4 +5,116 @@
 .feed {
 
   $block-name:                &; // #{$block-name}__element
+
+  display: grid;
+  grid-row-gap: $typo-margin-vertical;
+
+  .card {
+    grid-column: 1 / -1;
+  }
+
+  // stylelint-disable
+  @include bp (1200) {
+    grid-template-columns: repeat(auto-fit, minmax(calc(260px / 2), 1fr)); // 260px minimal column width
+
+    .card {
+
+      // start horizontal long
+      &:nth-child(9n+2),
+      &:nth-child(9n+3),
+      &:nth-child(9n+4) {
+        display: grid;
+        grid-template-columns: 260px 1fr;
+
+        .card__img-wrapper {
+          grid-column: 1;
+          grid-row: 1 / 3;
+        }
+
+        .card__img {
+          border-radius: 4px 0 0 4px;
+        }
+
+        .heading {
+          grid-column: 2;
+          grid-row: 1 / 2;
+        }
+
+        .card__caption {
+          grid-column: 2;
+          grid-row: 2;
+        }
+      }
+      // end horizontal long
+
+      // start vertical short
+      &:nth-child(9n+5) {
+        grid-column: 1 / span 2;
+        width: calc(100% - 1.33em / 2); // emulating grid-gap; 1.33em to make it even to column gap
+      }
+
+      &:nth-child(9n+6) {
+        grid-column: 3 / span 2;
+        width: calc(100% - 1.33em / 2);
+        justify-self: center;
+      }
+
+      &:nth-child(9n+7) {
+        grid-column: 5 / span 2;
+        width: calc(100% - 1.33em / 2);
+        justify-self: end;
+      }
+
+      // typography vertical short
+      &:nth-child(9n+5),
+      &:nth-child(9n+6),
+      &:nth-child(9n+7) {
+
+        .heading__text {
+          position: relative;
+
+          max-height: 4em * $line-height;
+
+          overflow: hidden;
+
+          // Truncate text multiline
+          // https://30-seconds.github.io/30-seconds-of-css/#truncate-text-multiline
+          &::after {
+
+            @include size (6em, 1em * $line-height);
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: 0;
+
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(255, 255, 255) 50%);
+          }
+        }
+      }
+      // end vertical short
+
+      // start vertical medium
+      &:nth-child(9n+8) {
+        grid-column: 1 / span 3;
+        width: calc(100% - 1em / 2);
+      }
+
+      &:nth-child(9n+9) {
+        grid-column: 4 / span 3;
+        width: calc(100% - 1em / 2);
+        justify-self: end;
+      }
+
+      // typography vertical medium
+      &:nth-child(9n+8),
+      &:nth-child(9n+9) {
+
+        .heading__text {
+          @include truncate (4em, $line-height);
+        }
+      }
+      // end vertical medium
+    }
+  }
+  // stylelint-enable
 }

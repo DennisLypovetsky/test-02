@@ -24,6 +24,12 @@
     box-shadow: 0 1px 0 #ddd;
   }
 
+  &__wrapper {
+    position: static;
+
+    overflow: hidden;
+  }
+
   &__title {
     margin-right: 20px;
 

@@ -5,16 +5,34 @@
 .heading {
 
   $block-name:                &; // #{$block-name}__element
+  padding: 0.8em 1em 1em;
 
   &__title {
 
-    &--promo {
-      color: inherit;
-    }
+    @include mg-bottom ($typo-margin-vertical / 2);
+    font-family: $font-family--heading;
+    // font-weight: 400;
+    color: rgba($black, 0.87);
   }
 
   &__button {
     @include mg (auto);
     margin-top: 40px;
+  }
+
+  &__text {
+    color: rgba($black, 0.87);
+    letter-spacing: 0.64px;
+  }
+
+  &--promo {
+    padding: unset;
+
+    #{$block-name}__title {
+      font-weight: 900;
+
+      color: currentColor;
+      text-transform: uppercase;
+    }
   }
 }

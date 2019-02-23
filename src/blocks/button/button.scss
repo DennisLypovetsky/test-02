@@ -23,6 +23,10 @@
   font-variant: inherit;
   letter-spacing: inherit;
 
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
   &--main {
     position: relative;
 

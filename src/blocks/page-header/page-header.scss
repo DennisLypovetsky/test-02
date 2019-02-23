@@ -70,6 +70,7 @@
       @include break-out--before (#303f9f); // #303f9f
       display: grid;
       grid-template-columns: 1fr max-content max-content;
+      justify-items: start;
 
       align-items: center;
       padding-top: 12px;

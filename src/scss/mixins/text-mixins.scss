@@ -51,3 +51,29 @@
     color: inherit;
   }
 }
+
+// Truncate text multiline
+// https://30-seconds.github.io/30-seconds-of-css/#truncate-text-multiline
+@mixin truncate (
+  $em: 2em,
+  $line-height: $line-height,
+  $background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(255, 255, 255) 50%)
+) {
+  position: relative;
+
+  max-height: $em * $line-height;
+
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    width: 6em;
+    height: 1em * $line-height;
+
+    background-image: $background-image;
+  }
+}

@@ -5,16 +5,25 @@
 .card {
 
   $block-name:                &; // #{$block-name}__element
-  color: $white;
-  text-transform: lowercase;
+  // margin-bottom: 200px;
+
+  letter-spacing: 0.8px;
 
   border-radius: 4px;
   background-color: $white;
-
-  font-variant: small-caps;
-  letter-spacing: 0.8px;
-
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
+
+  .heading {
+    border-bottom: 1px solid rgba($black, 0.12);
+
+    &__title {
+      @include truncate (2em, $line-height--heading);
+    }
+
+    &__text {
+      @include truncate (2em, $line-height);
+    }
+  }
 
   // stylelint-disable
   &__img-wrapper {
@@ -46,5 +55,9 @@
     justify-content: space-between;
     width: 100%;
     padding: 1em;
+
+    color: $white;
+    text-transform: lowercase;
+    font-variant: small-caps;
   }
 }
