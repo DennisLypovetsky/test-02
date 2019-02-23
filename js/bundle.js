@@ -4,7 +4,7 @@
  * Любые изменения этого файла будут потеряны при следующей компиляции.
  * Любое изменение проекта без возможности компиляции ДОЛЬШЕ И ДОРОЖЕ в 2-5 раз.
  */
-n(2),n(3),n(6),n(7),n(9)},function(t,e,n){n(0)(function(){for(var t=document.querySelectorAll(".burger"),e=0;e<t.length;e++){t[e].addEventListener("click",n)}function n(){var t=this.getAttribute("data-target-id"),e=this.getAttribute("data-target-class-toggle");t&&e&&(this.classList.toggle("burger--close"),document.getElementById(t).classList.toggle(e))}})},function(t,e,n){var i=n(0),o=n(4);i(function(){window.mySwipe=new o(document.getElementById("hero-slider"),{startSlide:0,auto:3e3,draggable:!0,autoRestart:!1,continuous:!0})})},function(t,e,n){(function(n){var i,o;
+n(2),n(3),n(6),n(7),n(9)},function(t,e,n){n(0)(function(){for(var t=document.querySelectorAll(".burger"),e=0;e<t.length;e++){t[e].addEventListener("click",n)}function n(){var t=this.getAttribute("data-target-id"),e=this.getAttribute("data-target-class-toggle");t&&e&&(this.classList.toggle("burger--close"),document.getElementById(t).classList.toggle(e))}})},function(t,e,n){var i=n(0),o=n(4);i(function(){window.mySwipe=new o(document.getElementById("hero-slider"),{startSlide:0,draggable:!1,autoRestart:!1,continuous:!0})})},function(t,e,n){(function(n){var i,o;
 /*!
  * Swipe 2.2.14
  *
